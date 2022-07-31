@@ -1,20 +1,19 @@
 provider "aws" {
-    region = var.region
+  region = var.region
 }
 
 terraform {
   backend "s3" {
-    bucket         = "exittaskepam"
-    key            = "terraform.tfstate"
-    region         = "us-east-1"
-    #dynamodb_table = "terraform-state-locking"
-    encrypt        = true
+    bucket  = "exittaskepam"
+    key     = "terraform.tfstate"
+    region  = "us-east-1"
+    encrypt = true
   }
-  
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 3.0"
+      version = "~> 4.23.0"
     }
   }
 }
@@ -24,7 +23,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "terraform-state" 
 
   rule {
     apply_server_side_encryption_by_default {
-        sse_algorithm = "AES256"
+      sse_algorithm = "AES256"
     }
   }
 }
