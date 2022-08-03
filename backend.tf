@@ -4,7 +4,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket  = "exittaskepam"
+    bucket  = "exittaskepam22"
     key     = "terraform.tfstate"
     region  = "us-east-1"
     encrypt = true
