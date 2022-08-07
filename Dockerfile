@@ -1,4 +1,4 @@
-#Build application stage
+/* #Build application stage
 FROM maven:3.8.5-jdk-11
 
 WORKDIR /usr/src/java-code
@@ -23,4 +23,4 @@ CMD java -Dserver.port=${SERVER_PORT:-}\
           -Dsecurity.ignored=${SECURITY_IGNORED:-/**}\
           -Dbasic.authentication.enabled=${AUTHENTICATION_ENABLED:-false}\
           -Dserver.address=${SERVER_ADDRESS:-0.0.0.0}\
-          -jar /app/app.jar
+          -jar /app/app.jar */
