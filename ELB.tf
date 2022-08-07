@@ -1,4 +1,4 @@
-# Get DNS name of the ELB created by the Ingress Controller.
+/* # Get DNS name of the ELB created by the Ingress Controller.
 data "kubernetes_service" "ingress-nginx" {
   metadata {
     namespace = "ingress"
@@ -15,4 +15,4 @@ data "aws_lb" "ingress-nginx" {
     data.kubernetes_service.ingress-nginx.status[0].load_balancer[0].ingress[0].hostname
   )[0]
 # name = data.kubernetes_service.ingress-nginx.status[0].load_balancer[0].ingress[0].hostname
-}
+} */
