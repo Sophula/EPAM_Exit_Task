@@ -1,9 +1,15 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: kaniko
+  name: kaniko-build-pod
 spec:
   containers:
+  - name: maven
+    image: maven:3.8.6
+    command:
+    - sleep
+    args: 
+    - 9999999
   - name: kubectl
     image: joshendriks/alpine-k8s
     command:
@@ -12,8 +18,9 @@ spec:
   - name: kaniko
     image: gcr.io/kaniko-project/executor:debug
     command:
-    - /busybox/cat
-    tty: true
+    - sleep
+    args:
+    - 9999999
     volumeMounts:
       - name: kaniko-secret
         mountPath: /kaniko/.docker
